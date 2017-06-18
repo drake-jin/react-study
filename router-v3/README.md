@@ -61,7 +61,19 @@ $ npm install --save react-router@3.0.0
 $ npm start
 ```
 
+#### 소스코드
 
+ - 서버에서 실행
+
+    ```
+    node server/index.js
+    ```
+
+ -  리엑트 개발에서 실행
+
+    ```
+    npm start
+    ```
 
 [create-react-app 참고](https://velopert.com/2037)
 React 작업환경을 명령어 하나로 설정 할 수 있는 “공식 도구”
