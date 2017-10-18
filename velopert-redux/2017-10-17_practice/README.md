@@ -1,3 +1,6 @@
+# React
+https://velopert.com/3365
+
 
 
 # 디렉토리 구조
@@ -6,6 +9,10 @@ src/components: 뷰만을 담당하는 presentational 컴포넌트들이 저장�
 src/containers: store 에 접근이 닿는 container 컴포넌트들이 저장됩니다
 src/reducers: 스토어의 기본상태와, 상태의 업데이트를 담당하는 리듀서 파일들이 저장됩니다
 src/utils: 일부 컴포넌트들에서 공용되는 파일이 저장됩니다.
+
+
+# 소스코드 파일 구조
+![이미지 파일](./redux-basic.png)
 
 # Container Components & Presentational Components
  Smart Component,  Dumb Component 로 알려져있다.
