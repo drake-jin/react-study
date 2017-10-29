@@ -16,8 +16,8 @@
 */
 
 
+import { Map, List } from 'immutable'
 import * as types from '../actions/ActionTypes'
-
 
 /* 
     리듀서 함수를 정의합니다. 리듀서는 state 와 action 을 파라미터로 받습니다.
@@ -42,17 +42,18 @@ import * as types from '../actions/ActionTypes'
     로 만들어집니다.
 */
 
-const initialState = {
-    counters: [
-        {
+const initialState = Map({
+    counters: List([
+        Map({
             color: 'black',
             number: 0,
-        }
-    ]
-}
+        })
+    ])
+})
 
 function counter(state = initialState, action){
-    const { counters } = state
+    const counters = state.get('counters')
+
     switch(action.type){
 /*
 컴포넌트의 state 안에있는 배열을 다룰때와 동일하게, 기존 배열에 직접 push() 혹은 pop() 을 하면 안돼고,
@@ -60,58 +61,32 @@ function counter(state = initialState, action){
 state 에서 array 를 직접 수정하는게 아닌 새로 만들어서 교체하는 방법처럼 해야한다....
 */
         case types.CREATE:
-            return {
-                counters: [
-                    ...counters,
-                    {
-                        color: action.color,
-                        number: 0
-                    }
-                ]
-            }
+            return state.set('counters', counters.push(Map({
+                    color: action.color,
+                    number: 0
+                }))
+            )
+
         case types.REMOVE:
-            return {
-                counters: counters.slice(0, counters.length - 1)
-            }
+            return state.set('counters', counters.pop())
+
         case types.INCREMENT:
-            return {
-                // state 에 pop 이나 push 로 데이터를 변경할 수 없으며, 객체를 새로 만들어 state 로 넣어주기위해 slice 를 사용하였다.
-                // state 의 특정 index 하나만 수정하려해도 array의 원소들을 전부 다시 구성하여 state에 넣을 값을 만들어 주어야 하기 때문에 
-                // 다음과 같은 코드가 나오게 되었다.
-                counters: [
-                    ...counters.slice(0, action.index),
-                    {
-                        ...counters[action.index],
-                        number: counters[action.index].number + 1,
-                    },
-                    ...counters.slice(action.index + 1, counters.length)
-                ]
-            }
+            return state.set('counters', counters.update(
+                action.index,
+                (counter) => counter.set('number', counter.get('number') + 1))
+            )
 
         case types.DECREMENT:
-            return {
-                counters: [
-                    ...counters.slice(0, action.index),
-                    {
-                        ...counters[action.index],
-                        number: counters[action.index].number - 1,
-                    },
-                    ...counters.slice(action.index + 1, counters.length)
+            return state.set('counters', counters.update(
+                action.index,
+                (counter) => counter.set('number', counter.get('number') - 1))
+            )
 
-                ]
-            }
         case types.SET_COLOR:
-            return {
-                counters: [
-                    ...counters.slice(0, action.index),
-                    {
-                        ...counters[action.index],
-                        color: action.color,
-                    },
-                    ...counters.slice(action.index + 1, counters.length)
-
-                ]
-            }
+            return state.set('counters', counters.update(
+                action.index,
+                (counter) => counter.set('color', action.color))
+            )
 
         default:
             return state

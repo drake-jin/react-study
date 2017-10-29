@@ -1,0 +1,39 @@
+<html>
+<head>
+  <title>
+    안녕하세요!
+  </title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/immutable/3.7.3/immutable.min.js"></script>
+</head>
+<body>
+
+<script>
+
+let Map = Immutable.Map;
+
+let object1 = Map({
+  a: 1,
+  b: 2,
+  c: 3,
+  d: Map({
+    e: 4,
+    f: Map({ 
+      g: 5,
+      h: 6
+    })
+  })
+});
+
+let object2 = object1.setIn(['d', 'f', 'h'], 10);
+
+console.log(object1.toJS())
+console.log(object2.toJS())
+
+object1 === object2;
+
+</script>
+
+
+
+</body>
+</html>

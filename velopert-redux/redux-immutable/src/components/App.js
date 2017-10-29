@@ -25,7 +25,7 @@ class App extends Component{
 
 // 액션 함수 준비
 const mapToDispatch = (dispatch) => ({
-  onCreate: () => dispatch(actions.create(getRandomColor)),
+  onCreate: () => dispatch(actions.create(getRandomColor())),
   onRemove: (index) => dispatch(actions.remove(index))
 })
 
