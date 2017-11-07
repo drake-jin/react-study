@@ -1,0 +1,24 @@
+{
+  "name": "react-contact",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "open-color": "^1.5.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-icons": "^2.2.7",
+    "react-scripts": "1.0.16",
+    "shortid": "^2.2.8",
+    "react-onclickoutside": "^5.11.1",
+    "styled-components": "^2.2.3",
+    "react-transition-group": "^1.1.1"
+    
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
