@@ -1,0 +1,11 @@
+.row{
+  display:block;
+}
+.row.attr{
+  color:black;
+  font-weight: bold;
+}
+.row.value{
+  color:#666;
+}
+
