@@ -1,24 +1,27 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import Row from '../Row'
 
 class MyProfile extends Component {
-
-
+  constructor(props) {
+    super(props)
+  }
   render() {
-    const {job, name, age, favoriteNumber, children} = this.props
+    const {
+      job, name, age, favoriteNumber, children,
+    } = this.props
     return (
       <div>
-        <Row attr="이름" value={name}/>
-        <Row attr="직업" value={job}/>
-        <Row attr="나이" value={age}/>
-        <Row attr="좋아하는 숫자" value={favoriteNumber}/>
-        <div class="description">
+        <Row attr="이름" value={name} />
+        <Row attr="직업" value={job} />
+        <Row attr="나이" value={age} />
+        <Row attr="좋아하는 숫자" value={favoriteNumber} />
+        <div className="description">
           {children}
         </div>
       </div>
-    );
+    )
   }
 }
 
 
-export default MyProfile;
+export default MyProfile
