@@ -1,0 +1,34 @@
+@import './styles/lib/all';
+
+.card{
+  width: $multiplier % 10;
+  height: $multiplier % 10;
+  margin: $multiplier;
+  display: inline-block;
+}
+
+.one {
+  @include box_shadow(1);
+  background: $oc-red-6;
+}
+
+.two {
+  @include box_shadow(2);
+  background: $oc-orange-6;
+}
+
+.three {
+  @include box_shadow(3);
+  background: $oc-yellow-6;
+}
+
+.four {
+  @include box_shadow(4);
+  background: $oc-green-6;
+}
+
+.five {
+  @include box_shadow(5);
+  background: $oc-blue-6;
+}
+

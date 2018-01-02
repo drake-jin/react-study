@@ -1,28 +1,25 @@
-.App {
-  text-align: center;
+.bluebox{
+  width: 100px;
+  height: 100px;
+  background: blue;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+/* 이건 정규 css 문법이긴 함 */
+:global .redbox{
+  width: 100px;
+  height: 100px;
+  background: red;  
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+/* 이건 정규 css 문법이 아님 */
+:global(.blackbox){
+  width: 100px;
+  height: 100px;
+  background: black;  
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+yellowbox{
+  width: 100px;
+  height: 100px;
+  background: yellow;  
 }

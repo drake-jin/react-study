@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
+import classNames from 'classnames/bind';
+
 import logo from './logo.svg';
-import './App.css';
+import styles from './App.scss';
+
+const cx = classNames.bind(styles)
 
 class App extends Component {
   render() {
+    console.log(styles)
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <div className={cx('card', 'one')}></div>
+        <div className={cx('card', 'two')}></div>
+        <div className={cx('card', 'three')}></div>
+        <div className={cx('card', 'four')}></div>
+        <div className={cx('card', 'five')}></div>
       </div>
     );
   }
