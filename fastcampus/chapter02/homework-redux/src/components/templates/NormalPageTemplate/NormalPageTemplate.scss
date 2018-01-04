@@ -1,0 +1,26 @@
+@import 'utils';
+
+
+
+.page {
+  background-color: $color-page-background;
+  display:flex;
+  position: relative;
+
+  & .header {
+    display:flex;
+    position:fixed;
+    height: 6rem;
+  }
+
+  & .content {
+    @include padding-content('row');
+    padding-top: 6rem;
+    display: flex;
+
+    &.on-use-only-center {
+      @include responsive();
+      justify-content: center;
+    }
+  }
+}

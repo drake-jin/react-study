@@ -1,0 +1,13 @@
+@import '~open-color/open-color';
+
+$color-page-background: $oc-gray-0;
+
+
+// https://include-media.com/ 문서를 참고하세요 $breakpoints 라는 변수를 이용합니다.
+$breakpoints: (
+  small: 376px, 
+  medium: 768px, 
+  large: 1024px, 
+  huge: 1200px
+);
+
