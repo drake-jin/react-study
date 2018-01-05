@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React from 'react'
 import ReactDOM from 'react-dom'
 
@@ -7,13 +9,13 @@ import './index.css'
 import registerServiceWorker from './registerServiceWorker'
 
 import { createStore } from 'redux'
-import reducers from './reducers'
+import reducers from 'modules'
 import { Provider } from 'react-redux'
 
 // 질문1 상위 컴포넌트에서  shouldComponentUpdate를 막으면 자식들의 update도 막던데... 이때에는 어떻게 해야하는 것?
 
+const store = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
-const store = createStore(reducers)
 ReactDOM.render(
   <Provider store={store}>
     <App />

@@ -1,6 +1,0 @@
-export const TODO_INPUT_CHANGE = 'TODO_INPUT_CHANGE'
-export const TODO_CREATE = 'TODO_CREATE'
-export const TODO_REMOVE = 'TODO_REMOVE'
-export const TODO_TOGGLE = 'TODO_TOGGLE'
-
-export const THEME_COLOR_CHANGE = 'THEME_COLOR_CHANGE'

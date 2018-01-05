@@ -1,15 +1,14 @@
 import { connect } from 'react-redux'
 
 import { TodoListPage } from 'components'
-
-import * as actions from 'actions'
+import * as actions from 'modules'
 
 // store 안의 state 값을 props 로 연결해준다.
 const mapStateToProps = state => ({
-  color: state.todoData.get('color'),
-  todos: state.todoData.get('todos'),
-  input: state.todoData.get('input'),
-  id: state.todoData.get('id'),
+  color: state.get('color'),
+  todos: state.get('todos'),
+  input: state.get('input'),
+  id: state.get('id'),
 })
 
 /*
@@ -34,68 +33,6 @@ const mapDispatchToProps = dispatch => ({
   },
 })
 
-/*
-todoListPage
-  // 이 메서드의 this를 해당 클래스의 this를 이용할 수 있도록
-  생성자에서 this를 binding해주어야 한다. 만약 그게 아니라면
-  // handleKeyPress = (e) => { }  이렇게 되면 익명함수를
-  이용하기 때문에 this는 class의 this를 바라보게 된다.
-  handleKeyChange(e) {
-    this.setState({
-      input: e.target.value,
-    })
-  }
-  handleKeyPress(e) {
-    if (e.key === 'Enter') this.handleCreateItem()
-  }
-
-  handleCreateItem() {
-    const { input, todos } = this.state
-    this.setState({
-      input: '',
-      todos: todos.concat({
-        id: this.id,
-        text: input,
-        checked: false,
-      }),
-    })
-    this.id += 1
-  }
-
-  handleRemove(selectedId) {
-    const { todos } = this.state
-    this.setState({
-      todos: todos.filter(({ id }) => id !== selectedId),
-    })
-  }
-
-  handleToggle(selectedId) {
-    const { todos } = this.state
-    const index = todos.findIndex(({ id }) => id === selectedId)
-    const selected = todos[index]
-    const copiedTodos = [...todos]
-    copiedTodos[index] = {
-      ...selected,
-      checked: !selected.checked,
-    }
-    this.setState({
-      todos: copiedTodos,
-    })
-  }
-
-  handleThemeColor(color) {
-    this.setState({ color })
-  }
-
-//===========================
-
-container
-
-   onSetColor: () => {
-    const color = getRandomColor() // 임시
-    dispatch(actions.setColor(color))
-  }
- */
 
 // Counter 컴포넌트의 Container 컴포넌트
 // Counter 컴포넌트를 어플리케이션의 데이터 레이어와 묶는 역할을 합니다.
