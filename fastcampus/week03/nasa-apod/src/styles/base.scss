@@ -1,0 +1,11 @@
+@import 'utils';
+
+body {
+  margin: 0;
+  background: $oc-gray-8;
+  box-sizing: border-box; // box-sizing: boarder-box 은 boader와 padding을 포함한 width height를 계산한 크기, 중요한 역할을 차지하니 주의하도록 하자.
+}
+
+* {
+  box-sizing: inherit;
+}

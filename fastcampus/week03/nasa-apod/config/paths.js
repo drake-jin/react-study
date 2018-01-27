@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 'use strict';
 
 const path = require('path');
@@ -52,4 +54,5 @@ module.exports = {
   appNodeModules: resolveApp('node_modules'),
   publicUrl: getPublicUrl(resolveApp('package.json')),
   servedPath: getServedPath(resolveApp('package.json')),
+  styles: resolveApp('src/styles'),  // webpack.config.*.js에서 paths.styles로 검색하는구간이 이쓴ㄴ데 바로 여기이다.
 };

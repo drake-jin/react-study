@@ -1,0 +1,16 @@
+redux의 subscribe는 부모의 state값하고 연관이 없나? 정말 redux의 store는 component의 트리 밖에서 위치하는 녀석인가 ?
+왜냐하면.. container도 결국에는 component이며 redux의 store는 container이 state값을 가져와서 저장소를 이루는것인데
+Container의 코드를 보면, Container로 감싼 component에다가 함수(메서드)들을 건내면
+결국 감싸진 component는 VirtualDOM 트리에서 부분적으로 때 놓고 보면 그 부분에서는 결국 최상위 DOM tree지 않나요?
+
+.
+.
+.
+. (edited)
+
+
+제가 이해 안가는 부분은 redux의 store영역을 DOM tree에 동일선상에 포함된 영역이 아닌 외부에서 빼놓고서 쓴다라는 개념이 좀 모호한것 같습니다.
+
+코드 상으로 보면 결국 container가 감싸버린 component 영역은 결국 자신의 부분적 트리의 끝자락 자식까지 container가 던져준 함수를 던져주어야지 끝자락의 노드가 사용할 수 있으니까 (edited)
+
+결국에는 리덕스는 트리의 외부에서 존재하는 녀석이 아닌 부분 트리의 최 상위에 있어 기존 state만 사용한 vanila react의 부모 같은 역할합니다.
