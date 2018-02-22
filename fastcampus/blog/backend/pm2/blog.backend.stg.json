@@ -1,0 +1,19 @@
+{
+  "apps": [{
+    "name": "blog.backend.stg",
+    "script": "src/index.js",
+    "watch": ["src"],
+    "ignore_watch" : ["node_modules", "logs"],
+    "watch_options": {
+      "followSymlinks": false
+    },
+    "env":{
+      "NODE_PATH":"src",
+      "NODE_ENV":"staging"
+    },
+    "log_date_format": "YYYY-MM-DD HH:mm:ss",
+    "error_file": "./logs/pm2/stg.stderr.log",
+    "out_file": "./logs/pm2/stg.stdout.log",
+    "pid_file": "./logs/stg.blog.backend.pid"
+  }]
+}

@@ -1,0 +1,13 @@
+version: '2'
+
+services:
+  mongo:
+    container_name: backend_mongo
+    image: mongo
+    restart: always
+    ports:
+      - 65432:27017
+    volumes:
+      - mongo_data:/data/db
+volumes:
+  mongo_data:

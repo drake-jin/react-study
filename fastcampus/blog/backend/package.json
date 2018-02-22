@@ -1,0 +1,28 @@
+{
+  "name": "fastcampus-react-blog-backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0"
+  },
+  "dependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.16.0",
+    "eslint-plugin-chai-expect": "^1.1.1",
+    "koa": "^2.4.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.3.0",
+    "mocha": "^5.0.0"
+  },
+  "scripts": {
+    "initialize": "docker-compose up --build -d && pm2 kill && rm -rf logs node_modules yarn.lock package-lock.json && yarn install",
+    "start:dev": "pm2 start pm2/blog.backend.dev.json && pm2 log blog.backend.dev",
+    "start:stg": "pm2 start pm2/blog.backend.stg.json && pm2 log blog.backend.stg",
+    "start:prod": "pm2 start pm2/blog.backend.prod.json && pm2 log blog.backend.prod",
+    "nyan": "mocha -R nyan test/**/*.test.js",
+    "test": "mocha -R spec test/**/*.test.js"
+
+  }
+}

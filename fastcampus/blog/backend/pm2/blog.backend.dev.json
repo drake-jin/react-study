@@ -1,0 +1,19 @@
+{
+  "apps": [{
+    "name": "blog.backend.dev",
+    "script": "src/index.js",
+    "watch": ["src"],
+    "ignore_watch" : ["node_modules", "logs"],
+    "watch_options": {
+      "followSymlinks": false
+    },
+    "env":{
+      "NODE_PATH":"src",
+      "NODE_ENV":"development"
+    },
+    "log_date_format": "YYYY-MM-DD HH:mm:ss",
+    "error_file": "./logs/pm2/dev.stderr.log",
+    "out_file": "./logs/pm2/dev.stdout.log",
+    "pid_file": "./logs/dev.fastcampus.blog.front.pid"
+  }]
+}
