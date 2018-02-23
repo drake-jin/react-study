@@ -1,12 +1,20 @@
 import React from 'react';
 import queryString from 'query-string';
+import { Helmet } from 'react-helmet';
 
 const About = ({location, match}) => {
-    const { detail } = queryString.parse(location.search);
+    const query = queryString.parse(location.search);
+
+    const detail = query.detail === 'true';
+    const { name } = match.params;
+
     return (
         <div>
-            <h2>About {match.params.name}</h2>
-            {detail && `detail: ${detail}`}
+            <Helmet>
+                <title>{`About ${name ? name : ''}`}</title>
+            </Helmet>
+            <h2>About {name}</h2>
+            {detail && 'detail: blahblah'}
         </div>
     );
 };
