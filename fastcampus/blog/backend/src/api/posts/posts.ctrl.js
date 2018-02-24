@@ -8,7 +8,6 @@ const posts = [
   },
 ]
 
-
 /* 포스트 작성
    POST /api/posts
    { title, body } */

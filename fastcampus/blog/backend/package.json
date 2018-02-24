@@ -9,12 +9,14 @@
   },
   "dependencies": {
     "chai": "^4.1.2",
+    "dotenv": "^5.0.0",
     "eslint": "^4.16.0",
     "eslint-plugin-chai-expect": "^1.1.1",
     "koa": "^2.4.1",
     "koa-bodyparser": "^4.2.0",
     "koa-router": "^7.3.0",
-    "mocha": "^5.0.0"
+    "mocha": "^5.0.0",
+    "mongoose": "^5.0.6"
   },
   "scripts": {
     "initialize": "docker-compose up --build -d && pm2 kill && rm -rf logs node_modules yarn.lock package-lock.json && yarn install",
@@ -23,6 +25,5 @@
     "start:prod": "pm2 start pm2/blog.backend.prod.json && pm2 log blog.backend.prod",
     "nyan": "mocha -R nyan test/**/*.test.js",
     "test": "mocha -R spec test/**/*.test.js"
-
   }
 }
