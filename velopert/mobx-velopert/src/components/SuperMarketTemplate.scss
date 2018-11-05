@@ -1,0 +1,22 @@
+.SuperMarketTemplate {
+  border: 1px solid black;
+  display: flex;
+  width: 768px;
+  margin: 3rem auto 0rem auto;
+  & > div {
+    padding: 1rem;
+    flex: 1;
+  }
+  h2 {
+    margin-top: 0;
+  }
+  .items-wrapper {
+    flex: 1;
+    background-color: #f8f9fa;
+  }
+
+  .basket-wrapper {
+    flex: 1;
+  }
+
+}
